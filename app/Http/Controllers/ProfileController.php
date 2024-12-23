@@ -107,8 +107,9 @@ class ProfileController extends Controller
             $name_sites = "-";
         }
 
+        $reg_code = Auth::user()->registration_code;
 
-        return view('profile.profile', compact( 'fullName', 'twoWords_ofName', 'end_ofName', 'name_jbtn', 'name_dept', 'name_sites', 'username'));
+        return view('profile.profile', compact( 'fullName', 'twoWords_ofName', 'end_ofName', 'name_jbtn', 'name_dept', 'name_sites', 'username', 'reg_code'));
     }
 
 

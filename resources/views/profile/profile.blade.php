@@ -23,11 +23,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Nama Lengkap</label>
-                                            <input id="inputTitle" type="text"
-                                                   class="form-control @error('first_name') is-invalid has-error @enderror"
-                                                   name="first_name" value="{{ $fullName }}"
-                                                   placeholder="Nama Anda" readonly>
-
+                                            <input id="inputTitle" type="text" class="form-control @error('first_name') is-invalid has-error @enderror"
+                                                name="first_name" value="{{ $fullName }}" placeholder="Nama Anda"  @if(is_null($reg_code)) readonly @endif>
                                         </div>
                                     </div>
                                     {{-- <div class="col-md-6">
