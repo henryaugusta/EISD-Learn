@@ -7,4 +7,6 @@
 @include('main.home.home_mentor')
 @endif
 
-{{-- <p>Laaaah</p> --}}
+@if (Auth::user()->role == "superadmin" && Request::is('home'))
+@include('main.home.home_superadmin')
+@endif

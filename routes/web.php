@@ -299,6 +299,28 @@ Route::group(['middleware’' => ['auth']], function () {
     });
 
 
+    // ROUTING KHUSUS SUPERADMIN
+    Route::group(['middleware' => ['superadmin']], function () {
+        Route::prefix("lesson")->group(function () {
+            Route::get('/{id}/dashboard', 'ClassDashboardController@viewClassDashboard');
+            Route::get('category', ['uses' => 'LessonCategoryController@manage']);
+            Route::get('category/create', ['uses' => 'LessonCategoryController@create']);
+            Route::post('category/store', 'LessonCategoryController@store')->name('lesson_category.store');
+            Route::any('category/{id}/delete', 'LessonCategoryController@destroy')->name('lesson_category.destroy');
+            Route::get('category/{id}/update', 'LessonCategoryController@update')->name('lesson_category.update');
+            Route::post('category/{id}/edit', 'LessonCategoryController@edit')->name('lesson_category.edit');
+        });
+
+        Route::prefix("admin")->group(function () {
+            Route::get('manage-mentor', ['uses' => 'AdministratorController@index']);
+            Route::get('category/create', ['uses' => 'LessonCategoryController@create']);
+            Route::post('category/store', 'LessonCategoryController@store')->name('lesson_category.store');
+        });
+    });
+
+    
+
+
     Route::get('/progress', 'StudentProgressController@startSection');
 
     Route::prefix("quiz")->group(function () {

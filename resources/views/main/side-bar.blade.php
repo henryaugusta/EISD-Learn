@@ -4,8 +4,10 @@
             <ul class="nav nav-dark">
                 @if (Auth::user()->role == 'student')
                     @include('main.sidebar.student-sidebar')
-                @else
+                @elseif (Auth::user()->role == 'mentor')
                     @include('main.sidebar.mentor-sidebar')
+                @else
+                    @include('main.sidebar.admin-sidebar')
                 @endif
 
                     <li class="nav-item {{ Request::is('profile') ? 'active' : '' }}" style="display: flex; justify-content: center;">

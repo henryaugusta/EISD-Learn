@@ -344,7 +344,8 @@ class HomeController extends Controller
 
             return view('main.dashboard')
                 ->with($compact);
-        } else if (Auth::check() && Auth::user()->role == 'student') {
+        } 
+        else if (Auth::check() && Auth::user()->role == 'student') {
 
             $currentMonth = date('n'); // Numeric representation of the current month (1-12)
             $currentYear = date('Y');  // Full numeric representation of the current year (e.g., 2024)
@@ -634,6 +635,30 @@ class HomeController extends Controller
                         'postTestScore'
                     )
                 );
+        }
+        else if(Auth::check() && Auth::user()->role == 'superadmin'){
+            $userId = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            if (!Auth::check()) {
+                return Redirect::away('/'); // Replace '/login' with the URL of your login page
+            }
+
+            MyHelper::addAnalyticEvent(
+                "Buka Dashboard Mentor",
+                "Dashboard"
+            );
+
+
+            $compact = compact(
+                'user_name'
+            );
+
+            if ($request->dump == true) {
+                return $compact;
+            };
+
+            return view('main.dashboard')
+                ->with($compact);
         }
     }
 }

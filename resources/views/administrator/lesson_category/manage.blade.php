@@ -126,7 +126,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Daftar Kategori Kelas Milik Anda</div>
+                        <div class="card-title">Daftar Kategori Kelas</div>
                     </div>
                     <div class="card-body">
                         <a href="{{ url('lesson/category/create') }}">
@@ -137,10 +137,10 @@
                             <table id="basic-datatables" class="table table-bordered  @if (count($datas) < 1) d-none @endif">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Icon</th>
                                     <th scope="col">Category Name</th>
-                                    <th>Color</th>
-                                    <th></th>
+                                    <th>Hexacolor Code</th>
+                                    {{-- <th></th> --}}
+                                    <th scope="col">Color</th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                 </tr>
@@ -148,9 +148,6 @@
                                 <tbody>
                                 @forelse ($datas as $data)
                                     <tr>
-                                        <td class="text-center">
-                                            <img src="{{ Storage::url('public/class/category/').$data->img_path }}" class="rounded" style="width: 150px">
-                                        </td>
                                         <td>{{ $data->name }}</td>
                                         <td>{{ $data->color_of_categories }}</td>
                                         <td>

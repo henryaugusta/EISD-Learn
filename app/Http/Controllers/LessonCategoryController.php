@@ -140,6 +140,6 @@ class LessonCategoryController extends Controller
         if($request->dump==true){
             return $compact;
         }
-        return view('lesson_category.manage')->with($compact);
+        return view('administrator.lesson_category.manage')->with($compact);
     }
 }
