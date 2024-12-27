@@ -17,9 +17,9 @@
 {{-- Manage Mentor--}}
 <li class="nav-item {{ Request::is('admin/manage-mentor') ? 'active' : '' }}" style="display: flex; justify-content: center;">
     <a href="{{ url('admin/manage-mentor') }}" style="display: flex; align-items: center;">
-        <img src="{{URL::to('/')}}/home_assets/img/ic-category.svg"
+        <img src="{{URL::to('/')}}/home_assets/img/mentors.svg"
              class="nav-ok-logo"
-             style="width: 14%; height: auto; margin-top: 5px; margin-right: 10px;"
+             style="width: 14%; height: auto; margin-top: 5px; margin-right: 10px; color: white;"
         >
         <p style="margin: 0; {{ (Request::is('admin/manage-mentor')) ? 'color: white !important;' : '' }}"
            class="{{ (Request::is('admin/manage-mentor')) ? 'text-white active' : '' }}">Manage Mentor</p>
@@ -43,17 +43,17 @@
 
 
 {{-- CLASS CATEGORY--}}
-<li class="nav-item {{ Request::is('lesson/category') ? 'active' : '' }}" style="display: flex; justify-content: center;">
-    <a href="{{ url('lesson/category') }}" style="display: flex; align-items: center;">
-        <img src="{{URL::to('/')}}/home_assets/img/ic-category.svg"
+<li class="nav-item {{ Request::is('registration-code-management') ? 'active' : '' }}" style="display: flex; justify-content: center;">
+    <a href="{{ url('registration-code-management') }}" style="display: flex; align-items: center;">
+        <img src="{{URL::to('/')}}/home_assets/img/partnership.svg"
              class="nav-ok-logo"
              style="width: 14%;
                     height: auto;
                     margin-top: 5px;
                     margin-right: 10px;"
         >
-        <p style="margin: 0; {{ (Request::is('lesson/category')) ? 'color: white !important;' : '' }}"
-           class="{{ (Request::is('lesson/category')) ? 'text-white active' : '' }}">Manage Partnership</p>
+        <p style="margin: 0; {{ (Request::is('registration-code-management')) ? 'color: white !important;' : '' }}"
+           class="{{ (Request::is('registration-code-management')) ? 'text-white active' : '' }}">Manage Partnership</p>
     </a>
 </li>
 

@@ -177,14 +177,7 @@ Route::group(['middleware’' => ['auth']], function () {
     Route::group(['middleware' => ['mentor']], function () {
 
 
-        Route::prefix('registration-code-management')->group(function () {
-            Route::get('/', ['uses' => 'RegistrationCodeController@index']);
-            Route::get('/create', ['uses' => 'RegistrationCodeController@create']);
-            Route::post('/store', ['uses' => 'RegistrationCodeController@store'])->name('registration_code.store');
-            Route::any('/destroy', ['uses' => 'RegistrationCodeController@store'])->name('registration_code.store');
-            Route::get('/{id}/edit', [RegistrationCodeController::class, 'edit'])->name('registration_code.edit');
-            Route::put('/registration-code/{id}', [RegistrationCodeController::class, 'update'])->name('registration_code.update');
-        });
+        
 
         Route::resource('users', UserManagementController::class);
         Route::post('/users/{id}/reset-password', 'UserManagementController@resetPassword')->name('users.resetPassword');
@@ -316,9 +309,16 @@ Route::group(['middleware’' => ['auth']], function () {
             Route::get('category/create', ['uses' => 'LessonCategoryController@create']);
             Route::post('category/store', 'LessonCategoryController@store')->name('lesson_category.store');
         });
-    });
 
-    
+        Route::prefix('registration-code-management')->group(function () {
+            Route::get('/', ['uses' => 'RegistrationCodeController@index']);
+            Route::get('/create', ['uses' => 'RegistrationCodeController@create']);
+            Route::post('/store', ['uses' => 'RegistrationCodeController@store'])->name('registration_code.store');
+            Route::any('/destroy', ['uses' => 'RegistrationCodeController@store'])->name('registration_code.store');
+            Route::get('/{id}/edit', [RegistrationCodeController::class, 'edit'])->name('registration_code.edit');
+            Route::put('/registration-code/{id}', [RegistrationCodeController::class, 'update'])->name('registration_code.update');
+        });
+    });
 
 
     Route::get('/progress', 'StudentProgressController@startSection');
