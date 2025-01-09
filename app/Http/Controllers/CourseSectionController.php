@@ -798,6 +798,10 @@ class CourseSectionController extends Controller
             $exam = Exam::find($examSession->exam_id);
             $session = $examSession;
             $questions = json_decode($session->questions_answers);
+            
+            // Acak Urutan Soal
+            shuffle($questions);
+
             $totalScore = 0;
             $title = $exam->title;
             if ($questions != null) {
