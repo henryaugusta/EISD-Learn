@@ -22,6 +22,7 @@ use App\Http\Controllers\VisualizationDetailController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use UniSharp\LaravelFilemanager\Lfm;
+use App\Http\Controllers\R2Controller;
 
 
 
@@ -176,8 +177,21 @@ Route::group(['middleware’' => ['auth']], function () {
     // ROUTING KHUSUS MENTOR
     Route::group(['middleware' => ['mentor']], function () {
 
+        Route::prefix('r2')->group(function () {
+            // Show the Blade view for uploading and downloading files
+            Route::get('/', [R2Controller::class, 'index'])->name('r2.index');
 
-        
+            // Route to delete a file
+            Route::delete('delete/{filename}', [R2Controller::class, 'delete'])->name('r2.delete');
+
+            // Route to upload a file
+            Route::post('upload', [R2Controller::class, 'upload'])->name('r2.upload');
+
+            // Route to download a file
+            Route::get('download/{filename}', [R2Controller::class, 'download'])->name('r2.download');
+        });
+
+
 
         Route::resource('users', UserManagementController::class);
         Route::post('/users/{id}/reset-password', 'UserManagementController@resetPassword')->name('users.resetPassword');
