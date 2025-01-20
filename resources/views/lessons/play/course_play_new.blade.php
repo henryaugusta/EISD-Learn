@@ -130,8 +130,7 @@
 <div id="wrapper">
     <div class="small-hamburger" style="margin-top:6px; margin-right: 30px; margin-left: 20px">
         <a href="#menu-toggle" id="menu-toggle-small">
-            <img src="{{asset('lesson_template/img/')}}/hamburger_button.svg" alt="Toggle Menu"
-                 style="width: 57px; height: 57px;">
+            <img src="{{asset('lesson_template/img/')}}/hamburger_button.svg" alt="Toggle Menu" style="width: 57px; height: 57px;">
         </a>
     </div>
 
@@ -445,9 +444,6 @@
                     </div>
 
                 </div>
-
-
-
 
                 @if (Auth::user()->role=="student")
                     @php

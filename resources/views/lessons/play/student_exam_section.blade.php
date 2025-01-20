@@ -267,6 +267,10 @@
 
     // Function to start the timer
     function startTimer() {
+        if (window.innerWidth < 50000) {
+            document.getElementById('sidebar-wrapper').classList.add('d-none');
+        }
+
         const payload = {
             userAnswers: {
                 examId: {{ $examSession->exam_id }},
