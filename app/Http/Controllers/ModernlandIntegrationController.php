@@ -279,7 +279,6 @@ class ModernlandIntegrationController extends Controller
 
     public function createOrUpdateLMSUser(Request $request)
     {
-
         // return $request->all();
         // Get the API credentials header
         $apiCredentials = $request->header('lms');
@@ -385,6 +384,13 @@ class ModernlandIntegrationController extends Controller
 
         if($request->password!= null || $request->password != '' || $request->password){
             $user->password = bcrypt($request->password);
+        }else{
+            // cari password lama;
+            $userIthub = DB::connection('ithub')->table('users') // assuming 'users' is your table name
+            ->where('id', $request->input('mdln_username')) // replace 'something' with the actual ID or variable
+            ->first();
+
+            $user->password = $userIthub->password;
         }
 
         $user->role = $request->input('role', "student");
