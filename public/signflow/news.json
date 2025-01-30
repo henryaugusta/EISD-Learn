@@ -2,6 +2,83 @@
   "message": "100 stream post(s) retrieved",
   "data": {
     "stream": [
+            {
+            "stream_id": 112187972,
+            "title_url": "https://learning.modernland.co.id/signflow/alur_pbj.html",
+            "title": "Alur Permohonan Barang & Jasa",
+            "content_original": "Untuk memastikan pengadaan barang IT berjalan secara sistematis dan sesuai dengan kebutuhan serta anggaran yang tersedia, berikut adalah prosedur yang perlu diikuti dalam pengajuan kebutuhan barang IT.",
+            "created_at": "2023-09-21 19:55:56",
+            "created_display": "Kamis, 21 September 2023 | 19:00 WIB",
+            "updated_at": "0000-00-00 00:00:00",
+            "user": {
+                "user_id": 472,
+                "is_author": false,
+                "username": "Tiar Dwi Krisnanto",
+                "fullname": "",
+                "avatar": "https://learning.modernland.co.id/asset_mdln_signflow/",
+                "is_verified": true,
+                "user_privilege": "PRIVILEGE_MEMBER",
+                "is_pro": false,
+                "country": "COUNTRY_ID"
+            },
+            "status": {
+                "is_pinned": false,
+                "is_trending": false,
+                "is_reposted": false,
+                "is_liked": false,
+                "is_saved": false,
+                "is_followed": false,
+                "is_unavailable": false
+            },
+            "total_replies": 0,
+            "total_likes": 0,
+            "reposted_from": null,
+            "likers": "",
+            "type": "STREAM_TYPE_NEWS",
+            "images": [
+                "https://learning.modernland.co.id/signflow/deposit_photo.jpg"
+            ],
+            "polling": [],
+            "attachment": [],
+            "parent_stream_id": 0,
+            "reports": [],
+            "news_feed": {
+                "source": "<span class=\"labelfield\"><img src=\"img/rss.png\" height=\"16\" width=\"16\">kabarproperti.id</span>",
+                "label": "IT Modernland",
+                "img": "https://learning.modernland.co.id/signflow/deposit_photo.jpg"
+            },
+            "target_price": [],
+            "analytics": null,
+            "last_reply_date": 1693792556,
+            "topics": ["MDLN"],
+            "last_reply": null,
+            "mask_html": [
+                {
+                    "mask": "exqM",
+                    "tag": "a",
+                    "text": "https://cutt.ly/swlsgvB7",
+                    "attr": {
+                        "class": "",
+                        "data_company": "",
+                        "data_user": "",
+                        "data_insider": "",
+                        "href": "https://cutt.ly/swlsgvB7",
+                        "target": "_blank"
+                    }
+                }
+            ],
+            "images_data": [],
+            "image_frame_type": "FRAME_TYPE_UNSPECIFIED",
+            "commenter_type": "COMMENTER_TYPE_EVERYONE",
+            "following_activity": {
+                "users": [],
+                "info": ""
+            },
+            "sharetrade_info": null,
+            "reply_to": 0,
+            "reply_content": null,
+            "research": null
+        },
       {
             "stream_id": 112187972,
             "title_url": "https://learning.modernland.co.id/signflow/mdln_news/visio.html",
